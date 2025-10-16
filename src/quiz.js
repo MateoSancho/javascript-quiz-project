@@ -38,4 +38,24 @@ class Quiz {
     hasEnded() {
         return this.currentQuestionIndex >= this.questions.length;
     }
+        // 7. filterQuestionsByDifficulty(difficulty)
+    filterQuestionsByDifficulty(difficulty) {
+        if (typeof difficulty !== 'number' || difficulty < 1 || difficulty > 3) {
+            return; // No filter if invalid difficulty
+        }
+        this.questions = this.questions.filter(question => 
+            question.difficulty === difficulty
+        );
+    }
+
+    // 8. averageDifficulty()
+    averageDifficulty() {
+        if (this.questions.length === 0) return 0;
+        
+        const totalDifficulty = this.questions.reduce((sum, question) => {
+            return sum + question.difficulty;
+        }, 0);
+        
+        return totalDifficulty / this.questions.length;
+    }
 }

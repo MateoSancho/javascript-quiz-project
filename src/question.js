@@ -1,9 +1,9 @@
 class Question {
     constructor(text, choices, answer, difficulty) {
         this.text = text;
-        this.choices = ["Creat a subclass","Define a propertie","Set a value","None"];
-        this.answer = choices[1];
-        this.difficulty = 2;
+        this.choices = choices;
+        this.answer = answer;
+        this.difficulty = difficulty;
     }
 
     shuffleChoices() {
